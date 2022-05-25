@@ -55,8 +55,8 @@ export const listFbSync = (coctails) => {
 
 export const deleteFbAsync = (id) => {
   return async (dispatch) => {
-    const getCollection = await collection(DB, "cocteles");
-    const q = query(getCollection, where("id", "==", id));
+    const getCollection = collection(DB, "cocteles");
+    const q = query(getCollection, where("idDrink", "==", id));
     const getDataQuery = await getDocs(q);
     getDataQuery.forEach((coctail) => {
       deleteDoc(doc(DB, "cocteles", coctail.id));
