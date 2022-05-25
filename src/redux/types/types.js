@@ -1,5 +1,5 @@
 export const types = {
-    list: 'Listar Cocteles',
+    listBD: 'Listar Cocteles de la BD',
     delete: 'Eliminar Coctel',
     add: 'Agregar coctel favorito'
 }   

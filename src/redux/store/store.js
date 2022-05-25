@@ -1,11 +1,11 @@
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import thunk from "redux-thunk";
-import { coctelReducers } from "../reducers/coctelReducer";
+import { firebaseReducer } from "../reducers/ReducerBD";
 
 const composeEnhancers = (typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) || compose;
 
 const reducers = combineReducers({
-    coctel: coctelReducers,
+    coctails: firebaseReducer
 })
 
 export const store = createStore(
