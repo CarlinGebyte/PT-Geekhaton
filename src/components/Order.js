@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteFbAsync, listFbAsync } from "../redux/actions/firebaseActions";
+import { ListContainer } from "../styles/styledComp/listStyle";
 
 function Order() {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ function Order() {
         <h1>Cocteles Agregados</h1>
       </div>
       <div>
-        <div>
+        <ListContainer>
           {coctails?.map((coctail) => (
             <div key={coctail.idDrink}>
               <div>{coctail.strDrink}</div>
@@ -34,7 +35,7 @@ function Order() {
               </button>
             </div>
           ))}
-        </div>
+        </ListContainer>
       </div>
     </div>
   );
