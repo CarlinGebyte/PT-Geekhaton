@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import DetailCoctel from './DetailCoctel';
+import { ListContainer } from '../styles/styledComp/listStyle';
 
 const ListCoctel = () => {
 
@@ -8,6 +10,10 @@ const ListCoctel = () => {
     const [search, setSearch] = useState({
         drink: ''
     });
+
+    const [detail, setDetail] = useState({})
+
+    const [modal, setModal] = useState(false)
 
     const listCoctel = (drink = '') => {
         axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${drink}`)
@@ -31,32 +37,34 @@ const ListCoctel = () => {
         })
     }
 
-    console.log(drinks)
-
     return (
         <div>
             <nav>
-                    <input
-                        type="text"
-                        onChange={handleChange}
-                        name="drink"
-                        value={search.drink}
-                        placeholder='search by name'
-                    />
+                <input
+                    type="text"
+                    onChange={handleChange}
+                    name="drink"
+                    value={search.drink}
+                    placeholder='search by name'
+                />
             </nav>
 
-            {drinks?.map(d => (
-                <div key={d.idDrink}>
-                    <p>{d.strDrink}</p>
-                    <img src={d.strDrinkThumb} alt="" />
-                    {/* <p>{d.strAlcoholic}</p>
-                    <p>{d.strInstructions}</p>
-                    <p>{d.strCategory}</p>
-                    <p>{d.strGlass}</p> */}
+            <ListContainer >
+                {drinks?.map(d => (
+                    <div key={d.idDrink} onClick={() => {
+                        setModal(true)
+                        setDetail(d)
+                    }} >
+                        <p>Name: {d.strDrink}</p>
+                        <img src={d.strDrinkThumb} alt="" />
 
-                    <button>Agregar</button>
-                </div>
-            ))}
+                        <button>Agregar</button>
+                    </div>
+                ))}
+            </ListContainer>
+
+            {modal ? <DetailCoctel modal={detail} close={setModal} /> : ''}
+
         </div>
     )
 }
