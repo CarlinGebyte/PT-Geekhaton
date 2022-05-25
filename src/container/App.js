@@ -1,8 +1,11 @@
 import React from 'react'
+import ListCoctel from '../components/ListCoctel'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>
+      <ListCoctel />
+    </div>
   )
 }
 
