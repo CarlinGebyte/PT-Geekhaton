@@ -2,6 +2,8 @@
 
 ## A simple web in that you can see some Cocktails, search them by their name and add them to an order
 
+[Link to the page](https://geekhaton.web.app)
+
 ## Set up
 
 You'll need [Node.js](https://nodejs.org/en/) installed
