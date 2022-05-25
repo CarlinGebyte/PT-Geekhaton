@@ -1,6 +1,5 @@
 export const types = {
-    list: 'Listar Cocteles',
-    filter: 'Filtrar coctel por nombre',
+    listBD: 'Listar Cocteles de la BD',
     delete: 'Eliminar Coctel',
     add: 'Agregar coctel favorito'
 }   
