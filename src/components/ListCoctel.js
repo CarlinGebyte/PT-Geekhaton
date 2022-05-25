@@ -51,12 +51,12 @@ const ListCoctel = () => {
 
             <ListContainer >
                 {drinks?.map(d => (
-                    <div key={d.idDrink} onClick={() => {
+                    <div key={d.idDrink}>
+                        <p><strong>Name: </strong>{d.strDrink}</p>
+                        <img src={d.strDrinkThumb} alt="" onClick={() => {
                         setModal(true)
                         setDetail(d)
-                    }} >
-                        <p>Name: {d.strDrink}</p>
-                        <img src={d.strDrinkThumb} alt="" />
+                    }} />
 
                         <button>Agregar</button>
                     </div>
