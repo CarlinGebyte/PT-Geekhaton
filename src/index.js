@@ -1,10 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './container/App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import CoctailsListDB from "./components/Order";
+import App from "./container/App";
+import { store } from "./redux/store/store";
+import AppRoutes from "./Routes/AppRoutes";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  <Provider store={store}>
+    <React.StrictMode>
+      <AppRoutes/>
+    </React.StrictMode>
+  </Provider>,
+  document.getElementById("root")
 );
