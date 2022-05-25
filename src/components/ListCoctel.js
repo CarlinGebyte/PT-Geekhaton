@@ -4,6 +4,7 @@ import DetailCoctel from "./DetailCoctel";
 import { ListContainer } from "../styles/styledComp/listStyle";
 import { addCoctail } from "../utils/AddCoctail";
 import { useDispatch } from "react-redux";
+import { SearchBar, SearchStyle } from "../styles/styledComp/navbarStyle";
 
 const ListCoctel = () => {
   const [drinks, setDrinks] = useState([]);
@@ -42,15 +43,15 @@ const ListCoctel = () => {
 
   return (
     <div>
-      <nav>
+      <SearchStyle>
         <input
           type="text"
           onChange={handleChange}
           name="drink"
           value={search.drink}
-          placeholder="search by name"
+          placeholder="Search by name"
         />
-      </nav>
+      </SearchStyle>
 
       <ListContainer>
         {drinks?.map((d) => (

@@ -1,17 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { NavbarStyle } from "../styles/styledComp/navbarStyle";
 
 function NavigationBar() {
   return (
     <header>
-      <nav>
+      <NavbarStyle>
         <ul>
-            <li>
-                <Link to="/">Inicio</Link>
-                <Link to="/order">Orden</Link>
-            </li>
+          <li>
+            <Link to="/">Inicio</Link>
+          </li>
+          <li>
+            <Link to="/order">Orden</Link>
+          </li>
         </ul>
-      </nav>
+      </NavbarStyle>
     </header>
   );
 }
