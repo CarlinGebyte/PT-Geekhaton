@@ -2,7 +2,7 @@
 
 ## A simple web in that you can see some Cocktails, search them by their name and add them to an order
 
-[Link to the page](https://cocktails-beta.vercel.app)
+[Link to the page](https://geekhaton.web.app)
 
 ## Set up
 
